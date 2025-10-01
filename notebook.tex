@@ -56,9 +56,10 @@ breakafter={,+-*;>=}, breakbefore={</}, tabsize=2, obeytabs, mathescape, frame=t
 \pagestyle{fancy}
 \fancyhf{}  % clear all header/footer fields
 \fancyhead[L]{AIUB\_Eclipse}  % left
-\fancyhead[C]{American International University-Bangladesh}           % center
+\fancyhead[C]{American International University-Bangladesh}  % center
 \fancyhead[R]{\thepage}       % right
 \fancyfoot{}                   % empty footer
+\renewcommand{\headrulewidth}{0.0pt}  % <-- removes the horizontal line
 
 \fancypagestyle{plain}{
     \fancyhf{} 

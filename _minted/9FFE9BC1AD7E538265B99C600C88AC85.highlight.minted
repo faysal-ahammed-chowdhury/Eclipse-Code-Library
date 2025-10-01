@@ -1,0 +1,31 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{n+nl}{Description}\PYG{p}{:}\PYG{+w}{ }\PYG{n}{Simple}\PYG{+w}{ }\PYG{n}{bipartite}\PYG{+w}{ }\PYG{n}{matching}\PYG{+w}{ }\PYG{n}{algorithm}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{Graph}\PYG{+w}{ }\PYG{n}{g}\PYG{+w}{ }\PYG{n}{should}\PYG{+w}{ }\PYG{n}{be}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{n}{list}
+\PYG{n}{of}\PYG{+w}{ }\PYG{n}{neighbors}\PYG{+w}{ }\PYG{n}{of}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{left}\PYG{+w}{ }\PYG{n}{partition}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{and}\PYG{+w}{ }\PYG{n}{btoa}\PYG{+w}{ }\PYG{n}{should}\PYG{+w}{ }\PYG{n}{be}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{n}{vector}\PYG{+w}{ }\PYG{n}{full}\PYG{+w}{ }\PYG{n}{of}
+\PYG{l+m+mi}{\PYGZhy{}1}\PYG{err}{\PYGZsq{}}\PYG{n}{s}\PYG{+w}{ }\PYG{n}{of}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{same}\PYG{+w}{ }\PYG{n}{size}\PYG{+w}{ }\PYG{n}{as}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{right}\PYG{+w}{ }\PYG{n}{partition}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{Returns}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{size}\PYG{+w}{ }\PYG{n}{of}
+\PYG{n}{the}\PYG{+w}{ }\PYG{n}{matching}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{btoa}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{will}\PYG{+w}{ }\PYG{n}{be}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{match}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{vertex}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{n}{on}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{right}\PYG{+w}{ }\PYG{n}{side}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{or}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{it}\PYG{err}{\PYGZsq{}}\PYG{n}{s}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{matched}\PYG{p}{.}
+\PYG{n+nl}{Time}\PYG{p}{:}\PYG{+w}{ }\PYG{c+c1}{// $O(\sqrt{N})$}
+
+
+\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{find}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{vi}\PYG{o}{\PYGZgt{}}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{vi}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{btoa}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{vi}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{vis}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{btoa}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{vis}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{di}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{btoa}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{e}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{[}\PYG{n}{di}\PYG{p}{]}\PYG{p}{)}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{vis}\PYG{p}{[}\PYG{n}{e}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{find}\PYG{p}{(}\PYG{n}{e}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{btoa}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{vis}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{btoa}\PYG{p}{[}\PYG{n}{e}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{di}\PYG{p}{;}
+\PYG{+w}{			}\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{dfsMatching}\PYG{p}{(}\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{vi}\PYG{o}{\PYGZgt{}}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{vi}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{btoa}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{vi}\PYG{+w}{ }\PYG{n}{vis}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{rep}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{sz}\PYG{p}{(}\PYG{n}{g}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{vis}\PYG{p}{.}\PYG{n}{assign}\PYG{p}{(}\PYG{n}{sz}\PYG{p}{(}\PYG{n}{btoa}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{		}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}
+\PYG{+w}{			}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{find}\PYG{p}{(}\PYG{n}{j}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{btoa}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{vis}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{				}\PYG{n}{btoa}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{;}
+\PYG{+w}{				}\PYG{k}{break}\PYG{p}{;}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{btoa}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{count}\PYG{p}{(}\PYG{n}{all}\PYG{p}{(}\PYG{n}{btoa}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}
