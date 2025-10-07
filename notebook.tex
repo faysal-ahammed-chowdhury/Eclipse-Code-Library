@@ -1,5 +1,6 @@
 \documentclass[8pt, a4paper, onesided]{article}
 \usepackage[landscape, left=0.1in, right=0.1in, top=0.25in, bottom=0.1in, headsep=0.05in]{geometry}
+\usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{listings}
@@ -14,7 +15,8 @@
 \usepackage{graphicx}
 
 \usemintedstyle{default}
-
+% \setlist[itemize]{topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, left=0pt}
+\setlist[itemize]{itemsep=0pt,left=0pt}
 \setlength{\columnsep}{0.4cm}
 \setlength{\columnseprule}{0.1pt}
 \setlength{\parskip}{-4.5mm plus 0.5mm minus 0.5mm}

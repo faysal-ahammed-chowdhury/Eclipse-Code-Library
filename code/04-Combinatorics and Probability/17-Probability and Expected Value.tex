@@ -1,0 +1,11 @@
+\vspace{-5.5mm}
+{\small
+\begin{itemize}
+\item Expected value: $E = \sum_{i=1}^{n} P_i \cdot i$
+\item Variance: $V(x) = E(x^2) - \{E(x)\}^2$
+\item To get two consecutive heads, what is the expected number of tosses?
+\includegraphics[width=\linewidth]{images/expected_value_1.png}
+\item To get $n$ heads, what is the expected number of tosses? Let’s define: to get $n$ heads, we need to toss $E(n)$ times. Now — I can get a head; I need to toss $E(n-1)$ more times, or if I get a tail; I need to toss $E(n)$ times. So, the recurrence is: $E(n) = 0.5 \cdot (1 + E(n-1)) + 0.5 \cdot (1 + E(n))$
+\includegraphics[width=\linewidth]{images/expected_value_2.png}
+\end{itemize}
+}
