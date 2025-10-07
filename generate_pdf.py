@@ -68,9 +68,10 @@ def get_tex(sections):
             ext = relative_path.lower().split('.')[-1]
             
             if ext in ['cpp','c','cc','py','java']:  # code
-                tex += f'\\subsection{{\\small {texify(clean_subsection)}  \\scriptsize [{number_of_lines} lines]}}\n'
+                tex += f'\\subsection{{\\small {texify(clean_subsection)}  \\scriptsize}}\n'
                 file_path = Path(relative_path).as_posix()
-                tex += f'\\inputminted{{{get_style(relative_path)}}}{{{file_path}}}\n\n'
+                # tex += f'\\inputminted{{{get_style(relative_path)}}}{{{file_path}}}\n\n'
+                tex += f'\\inputminted[breaklines, breakanywhere]{{{get_style(relative_path)}}}{{{file_path}}}\n\n'
             elif ext in ['png','jpg','jpeg','pdf']:  # images
                 tex += f'\\begin{{center}}\n\\includegraphics[width=0.9\\linewidth]{{{Path(relative_path).as_posix()}}}\n\\end{{center}}\n\n'
             elif ext in ['tex']:  # text or LaTeX notes
