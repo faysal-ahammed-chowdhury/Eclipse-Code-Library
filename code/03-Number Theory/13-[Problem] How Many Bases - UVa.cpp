@@ -6,7 +6,7 @@ int solve_greater_or_equal(vector<int> e, int t) {
   }
   return ans;
 }
-// e contains e1, e2 -> ${p1}^{e1}$, ${p2}^{e2}$
+// e contains $e_1$, $e_2$ -> ${p_1}^{e_1}$, ${p_2}^{e_2}$
 int solve_equal(vector<int> e, int t) {
   return (solve_greater_or_equal(e, t) - solve_greater_or_equal(e, t + 1) + mod) % mod;
 }
