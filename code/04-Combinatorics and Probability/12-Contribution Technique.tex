@@ -1,6 +1,5 @@
 \vspace{-4.5mm}
 {\small
-\textbf{Rule: Calculate the contribution of each element separately.}
 \begin{itemize}
 \item Sum of all pair sums: $\sum_{i=1}^{n} \sum_{j=1}^{n} (a_i + a_j)$\\
 Every element will be added $2n$ times.
@@ -29,5 +28,7 @@ $\sum_{k=0}^{30} \left( \left(2^{cnt_{k}[1]} - 1\right) \times 2^{k} \right).$
 \item Sum of Subset ORs — \\
 $\sum_{k=0}^{30} \left( \left(2^{n} - 2^{cnt_{k}[0]}\right) \times 2^{k} \right).$
 \item Sum of subarray XORs — Convert to prefix xor, then solve for pairs.
+\item Sum of product of all subsequence — $\prod_{i=1}^{n} (a_i+1)-1$.
+Example array — $[a,b]$ the subsequences are $\{a\}, \{b\}, \{a,b\}$ so ans is $a + b + (a \cdot b)$
 \end{itemize}
 }
