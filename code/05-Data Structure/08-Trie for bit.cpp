@@ -21,7 +21,7 @@ struct Trie {
       cur -> sz++;
     }
   }
-  int query(int x, int k) { // number of values s.t. val ^ x < k
+  int query(int x, int k) { // number of values s.t. $val \oplus x < k$
     node* cur = root;
     int ans = 0;
     for (int i = B - 1; i >= 0; i--) {
@@ -34,7 +34,7 @@ struct Trie {
     }
     return ans;
   }
-  int get_max(int x) { // returns maximum of val ^ x
+  int get_max(int x) { // returns maximum of $val \oplus x$
     node* cur = root;
     int ans = 0;
     for (int i = B - 1; i >= 0; i--) {
@@ -44,7 +44,7 @@ struct Trie {
     }
     return ans;
   }
-  int get_min(int x) { // returns minimum of val ^ x
+  int get_min(int x) { // returns minimum of $val \oplus x$
     node* cur = root;
     int ans = 0;
     for (int i = B - 1; i >= 0; i--) {

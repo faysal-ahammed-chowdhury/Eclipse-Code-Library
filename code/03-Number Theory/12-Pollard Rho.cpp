@@ -20,7 +20,7 @@ inline ll pow_mod(ll x, ll n, ll m) {
   }
   return res;
 }
-// O(it * (logn)^3), it = number of rounds performed
+// $O(it * (logn)^3)$, it = number of rounds performed
 inline bool miller_rabin(ll n) {
   if (n <= 2 || (n & 1 ^ 1)) return (n == 2);
   if (n < P) return spf[n] == n;
