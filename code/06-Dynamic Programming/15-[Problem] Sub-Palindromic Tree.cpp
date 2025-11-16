@@ -24,7 +24,7 @@ void solve() {
     g[u].push_back(v);
     g[v].push_back(u);
   }
-  // $nxt[u][v]$ = next node after u if I want to go from $u$ to $v$
+  // $nxt[u][v]$ = next node after $u$ if I want to go from $u$ to $v$
   for (int u = 1; u <= n; u++) {
     for (auto x : g[u]) {
       vec.clear();
