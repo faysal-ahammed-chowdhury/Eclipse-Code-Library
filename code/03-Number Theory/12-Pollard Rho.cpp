@@ -48,7 +48,7 @@ void init() {
     }
   }
 }
-// returns O(n^(1/4))
+// returns $O(n^{\frac{1}{4}})$
 ll pollard_rho(ll n) {
   while (1) {
     ll x = rnd() % n, y = x, c = rnd() % n, u = 1, v, t = 0;
