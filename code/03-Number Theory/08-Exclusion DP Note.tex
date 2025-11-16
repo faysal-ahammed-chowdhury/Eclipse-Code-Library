@@ -6,20 +6,21 @@ $g[i]$ = $f[i] - \sum_{i \mid j} g[j]$. \\
 
 \medskip
 
-\textbf{Sum of all pair gcd:} \\
+\textbf{Sum of all pair gcd:}
 
 We know, how many pairs are there such that their gcd is $i$ for every $i$ (1 to $n$). So now,  
 $\sum_{i=1}^{n} g[i] * i$. \\
 
 \medskip
 
-\textbf{Sum of all pair lcm (i = 1, j = 1):} \\
+\textbf{Sum of all pair lcm (i = 1, j = 1):}
 We know, 
 $\text{lcm}(a, b) = \frac{a * b}{\text{gcd}(a,b)}$. \\
 \medskip
 
 Now, $f[i]$ = All pair product sum of those, whose gcd is $i$ or it’s multiple. \\ 
 $g[i]$ = All pair product sum of those, whose gcd is $i$. \\
+\medskip
 
 $\text{Ans} = \sum_{i=1}^{n} \frac{g[i]}{i}$. \\
 \medskip
