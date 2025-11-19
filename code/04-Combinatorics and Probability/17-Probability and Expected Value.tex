@@ -20,7 +20,7 @@
     \textbf{Problem-4:} Pick $N$ random integers from $[1, k]$. Merge consecutive equal values (e.g., $1,1,2,2,1,1 \to 1,2,1$). Find the expected final length. Indicator $I_i$: "Is item $i$ different from item $i-1$?"
 }
 \item To get two consecutive heads, what is the expected number of tosses?
-\includegraphics[width=\linewidth]{images/expected_value_1.png}
+\includegraphics[width=0.9\linewidth]{images/expected_value_1.png}
 \item To get $n$ heads, what is the expected number of tosses? Let’s define: to get $n$ heads, we need to toss $E(n)$ times. Now — I can get a head; I need to toss $E(n-1)$ more times, or if I get a tail; I need to toss $E(n)$ times. So, the recurrence is: $E(n) = 0.5 \cdot (1 + E(n-1)) + 0.5 \cdot (1 + E(n))$
 % \includegraphics[width=\linewidth]{images/expected_value_2.png}
 \item {
