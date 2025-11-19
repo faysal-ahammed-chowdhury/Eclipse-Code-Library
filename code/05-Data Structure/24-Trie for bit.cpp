@@ -21,6 +21,16 @@ struct Trie {
       cur -> sz++;
     }
   }
+  void erase( int val ) {
+    node *cur = root;
+    cur->sz--;
+    for (nt i = B - 1; i >= 0; i--) {
+      int x = val >> i & 1;
+      if (cur->nxt[x] == NULL) return;
+      cur = cur->nxt[x];
+      cur->sz--;
+    }
+  }
   int query(int x, int k) { // number of values s.t. $val \oplus x < k$
     node* cur = root;
     int ans = 0;

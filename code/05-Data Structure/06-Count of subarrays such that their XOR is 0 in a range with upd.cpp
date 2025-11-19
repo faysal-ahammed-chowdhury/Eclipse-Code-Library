@@ -39,18 +39,23 @@ struct ST {
     push(n, b, e);
     if (b > j || e < i) return;
     if (b >= i && e <= j) {
-      lazy[n] ^= x;
-      push(n, b, e);
+      lazy[n] ^= x; push(n, b, e);
       return;
     }
+    int mid = (b + e) >> 1, l = n << 1, r = l + 1;
+    upd(l, b, mid, i, j, x);
+    upd(r, mid + 1, e, i, j, x);
+    tree[n] = merge(tree[l], tree[r]);
   }
   node query(int n, int b, int e, int i, int j) {
     push(n, b, e);
     if (b > j || e < i) {
-      node tmp;
-      return tmp;
+      node tmp;return tmp;
     }
     if (b >= i && e <= j) return tree[n];
+    int mid = (b + e) >> 1, l = n << 1, r = l + 1;
+    node L = query(l, b, mid, i, j);
+    node R = query(r, mid + 1, e, i, j);
     return merge(L, R);
   }
 } st;

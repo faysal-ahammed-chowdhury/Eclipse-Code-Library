@@ -1,7 +1,9 @@
 // Problem: Range Updates and Sums - CSES
 struct ST {
   int tree[4 * N];
-  pair<int, int> lazy[4 * N];
+  pair<int, int> lazy[4 * N]; // val, types
+  // lazy[n].first = 0; default for all n
+  // lazy[n].second = -1; default for all n
   void push(int n, int b, int e) {
     if (lazy[n].first == 0) return;
     if (lazy[n].second == 1) { // set
@@ -36,12 +38,5 @@ struct ST {
       }
     }
     lazy[n].first = 0; lazy[n].second = -1;
-  }
-  void build(int n, int  b, int e) {
-    lazy[n].first = 0; lazy[n].second = -1;
-    tree[n] = tree[l] + tree[r];
-  }
-  void upd(int n, int b, int e, int i, int j, int type, int x) {
-    lazy[n] = {x, type};
   }
 } st;

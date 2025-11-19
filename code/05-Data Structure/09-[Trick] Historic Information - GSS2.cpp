@@ -17,17 +17,27 @@ struct ST {
     lazy[n] = 0; lazy2[n] = 0;
   }
   void upd(int n, int b, int e, int i, int j, int x) {
+    push(n, b, e);
+    if (b > j || e < i) return;
     if (b >= i && e <= j) {
       lazy[n] += x;
       lazy2[n] = max(lazy2[n], lazy[n]);
       push(n, b, e);
       return;
     }
+    int mid = (b + e) >> 1, l = n << 1, r = l + 1;
+    upd(l, b, mid, i, j, x);
+    upd(r, mid + 1, e, i, j, x);
     tree[n] = max(tree[l], tree[r]);
     tree2[n] = max(tree2[l], tree2[r]);
   }
   int query(int n, int b, int e, int i, int j) {
+    push(n, b, e);
+    if (b > j || e < i) return 0;
     if (b >= i && e <= j) return tree2[n];
+    int mid = (b + e) >> 1, l = n << 1, r = l + 1;
+    int L = query(l, b, mid, i, j);
+    int R = query(r, mid + 1, e, i, j);
     return max(L, R);
   }
 } st;
